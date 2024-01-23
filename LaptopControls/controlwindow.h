@@ -2,7 +2,7 @@
 #define CONTROLWINDOW_H
 
 #include <QMainWindow>
-#include "Server.h"
+#include "Client.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,7 +19,7 @@ public:
     ~ControlWindow();
 
 protected:
-    Server server;
+    Client client;
     bool serverOn = false;
     int driveData = 0;  // Think in terms of bits: W - bit 0, A - bit 1, S - bit 2, D - bit 3
                     // If W and S are pressed, value is 0101 = 5
@@ -27,8 +27,8 @@ protected:
     void keyReleaseEvent(QKeyEvent *event);
 
 private slots:
-    void on_start_server_button_clicked();
-    void on_close_server_button_clicked();
+    void on_start_client_button_clicked();
+    void on_close_client_button_clicked();
 
 private:
     Ui::ControlWindow *ui;

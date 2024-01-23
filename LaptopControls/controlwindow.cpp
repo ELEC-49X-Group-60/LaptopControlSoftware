@@ -1,6 +1,6 @@
 #include "controlwindow.h"
 #include "ui_controlwindow.h"
-#include "Server.h"
+#include "Client.h"
 
 #include <QKeyEvent>
 
@@ -42,7 +42,7 @@ void ControlWindow::keyPressEvent(QKeyEvent *ev)
             return;
         }
         if (serverOn)
-            server.sendDriveData(driveData);
+            client.sendDriveData(driveData);
     }
 }
 
@@ -69,19 +69,19 @@ void ControlWindow::keyReleaseEvent(QKeyEvent *ev)
             return;
         }
         if (serverOn)
-            server.sendDriveData(driveData);
+            client.sendDriveData(driveData);
     }
 }
 
-void ControlWindow::on_start_server_button_clicked()
+void ControlWindow::on_start_client_button_clicked()
 {
     if (!serverOn)
-        serverOn = server.startConnection();
+        serverOn = client.startConnection("192.168.1.101", 8080);
 }
 
-void ControlWindow::on_close_server_button_clicked()
+void ControlWindow::on_close_client_button_clicked()
 {
-    server.closeConnection();
+    client.closeConnection();
     serverOn = false;
 }
 

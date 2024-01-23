@@ -157,7 +157,7 @@ border-color: rgb(23, 201, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="start_server_button">
+   <widget class="QPushButton" name="start_client_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -170,10 +170,10 @@ border-color: rgb(23, 201, 255);</string>
      <string notr="true">color: rgb(24, 179, 24);</string>
     </property>
     <property name="text">
-     <string>Start Server</string>
+     <string>Start Client</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="close_server_button">
+   <widget class="QPushButton" name="close_client_button">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -186,7 +186,7 @@ border-color: rgb(23, 201, 255);</string>
      <string notr="true">color: rgb(180, 19, 7);</string>
     </property>
     <property name="text">
-     <string>Close Server</string>
+     <string>Close Client</string>
     </property>
    </widget>
   </widget>
