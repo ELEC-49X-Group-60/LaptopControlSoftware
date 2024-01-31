@@ -21,8 +21,10 @@ public:
 protected:
     Client client;
     bool serverOn = false;
-    int driveData = 0;  // Think in terms of bits: W - bit 0, A - bit 1, S - bit 2, D - bit 3
-                    // If W and S are pressed, value is 0101 = 5
+    int motorFL = 0;    // For the motors, speed is on a scale from 0 to 255
+    int motorRL = 0;    // 0-127 is counter-clockwise rotation. 128-255 is clockwise rotation (double check this)
+    int motorFR = 0;
+    int motorRR = 0;
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
 
