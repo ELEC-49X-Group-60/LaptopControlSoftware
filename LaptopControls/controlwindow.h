@@ -21,10 +21,12 @@ public:
 protected:
     Client client;
     bool serverOn = false;
-    int motorFL = 0;    // For the motors, speed is on a scale from 0 to 255
-    int motorRL = 0;    // 0-127 is counter-clockwise rotation. 128-255 is clockwise rotation (double check this)
-    int motorFR = 0;
-    int motorRR = 0;
+    int driveData;
+    int motorFR = 128;    // For the motors, speed is on a scale from 0 to 255
+    int motorRR = 128;    // 0-127 is counter-clockwise rotation. 128-255 is clockwise rotation (double check this)
+    int motorFL = 128;    // valid range for motors is 84 - 171
+    int motorRL = 128;    // Right side is +, left side is - for going forward
+    void adjustMotors();
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent *event);
 
