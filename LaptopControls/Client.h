@@ -18,7 +18,7 @@ signals:
 public slots:
     void newConnection();
     void closeConnection();
-    void sendDriveData(int FR, int RR, int FL, int RL);
+    void sendDriveData(uint8_t FR, uint8_t RR, uint8_t FL, uint8_t RL);
 
 private:
     QTcpSocket *clientSocket;

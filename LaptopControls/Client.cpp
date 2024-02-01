@@ -41,9 +41,12 @@ void Client::closeConnection(){
     qDebug() << "Client closed";
 }
 
-void Client::sendDriveData(int FR, int RR, int FL, int RL){
-    std::string msg = std::to_string(FR) + " " + std::to_string(RR) + " " + std::to_string(FL) + " " + std::to_string(RL) + " " + "\n";
-    clientSocket->write(msg.c_str());
+void Client::sendDriveData(uint8_t FR, uint8_t RR, uint8_t FL, uint8_t RL){
+    //std::string msg = std::to_string(FR) + " " + std::to_string(RR) + " " + std::to_string(FL) + " " + std::to_string(RL) + " " + "\n";
+
+    char msg[] = {FR, RR, FL, RL};
+
+    clientSocket->write(msg);
     clientSocket->flush();
     clientSocket->waitForBytesWritten(3000);
 }
