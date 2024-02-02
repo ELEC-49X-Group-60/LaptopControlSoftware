@@ -6,6 +6,8 @@
 #include <QTcpSocket>
 #include <QDebug>
 
+const int SPEED_MULTIPLIER = 14;
+
 class Client : public QThread
 {
     Q_OBJECT

@@ -1,6 +1,7 @@
 #include "controlwindow.h"
 
 #include <QApplication>
+#include <iostream>
 
 int main(int argc, char *argv[])
 {
@@ -8,5 +9,6 @@ int main(int argc, char *argv[])
 
     ControlWindow w;
     w.show();
+
     return a.exec();
 }
