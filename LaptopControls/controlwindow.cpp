@@ -23,10 +23,11 @@ ControlWindow::sgn(int val){
 }
 
 void ControlWindow::adjustMotors(){
-    motorFR = 128 + (sgn(y) * speed * SPEED_MULTIPLIER);
-    motorRR = 128 + (sgn(x) * speed * SPEED_MULTIPLIER);
-    motorFL = 128 - (sgn(x) * speed * SPEED_MULTIPLIER);
-    motorRL = 128 - (sgn(y) * speed * SPEED_MULTIPLIER);
+    motorFR = 128 + (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER/2);
+    motorRR = 128 + (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER/2);
+    motorFL = 128 - (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER/2);
+    motorRL = 128 - (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER/2);
+    ui->motor_label->setText(QString("FR: %1\nRR: %2\nFL: %3\nRL: %4").arg(motorFR).arg(motorRR).arg(motorFL).arg(motorRL));
 }
 
 void ControlWindow::keyPressEvent(QKeyEvent *ev)
@@ -51,6 +52,14 @@ void ControlWindow::keyPressEvent(QKeyEvent *ev)
             ui->d_key->setFrameShadow(QFrame::Raised);
             x += 1;
             y -= 1;
+        }
+        else if (ev->text() == "q" || ev->text() == "Q"){
+            ui->q_key->setFrameShadow(QFrame::Raised);
+            spin += 1;
+        }
+        else if (ev->text() == "e" || ev->text() == "E"){
+            ui->e_key->setFrameShadow(QFrame::Raised);
+            spin -= 1;
         }
         else if (ev->text() == "1"){
             ui->one_key->setStyleSheet("color:rgb(252 ,111, 3)");
@@ -99,13 +108,21 @@ void ControlWindow::keyReleaseEvent(QKeyEvent *ev)
         }
         else if (ev->text() == "s" || ev->text() == "S"){
             ui->s_key->setFrameShadow(QFrame::Sunken);
-            x -= 1;
-            y -= 1;
+            x += 1;
+            y += 1;
         }
         else if (ev->text() == "d" || ev->text() == "D"){
             ui->d_key->setFrameShadow(QFrame::Sunken);
             x -= 1;
             y += 1;
+        }
+        else if (ev->text() == "q" || ev->text() == "Q"){
+            ui->q_key->setFrameShadow(QFrame::Sunken);
+            spin -= 1;
+        }
+        else if (ev->text() == "e" || ev->text() == "E"){
+            ui->e_key->setFrameShadow(QFrame::Sunken);
+            spin += 1;
         }
         else if (ev->text() == "1"){
             ui->one_key->setFrameShadow(QFrame::Sunken);

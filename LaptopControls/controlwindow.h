@@ -25,7 +25,8 @@ protected:
     bool serverOn = false;
     int x = 0;
     int y = 0;
-    int speed = 1;
+    int speed = 1;  //Speed control. numbers 1 through 3
+    int spin = 0;   //Spin control. 0 is none. 1 is counter-clockwise. -1 is counter-clockwise
     int motorFR = 128;    // For the motors, speed is on a scale from 0 to 255
     int motorRR = 128;    // 0-127 is counter-clockwise rotation. 128-255 is clockwise rotation (double check this)
     int motorFL = 128;    // valid range for motors is 84 - 171
