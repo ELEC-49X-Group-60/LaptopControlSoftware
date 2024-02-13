@@ -2,14 +2,12 @@
 #include <strings.h>
 
 Client::Client() {
+    clientSocket = new QTcpSocket(this);
 
+    connect(clientSocket, SIGNAL(newConnection()), this, SLOT(newConnection()));
 }
 
 bool Client::startConnection(QString hostname, int port){
-
-
-    clientSocket = new QTcpSocket(this);
-    connect(clientSocket, SIGNAL(newConnection()), this, SLOT(newConnection()));
 
     clientSocket->connectToHost(hostname, port);
     if(!clientSocket->waitForConnected()){

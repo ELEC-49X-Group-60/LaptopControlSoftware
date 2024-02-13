@@ -11,6 +11,9 @@ ControlWindow::ControlWindow(QWidget *parent)
     ui->setupUi(this);
 
     serverOn = false;
+
+    playerSession = new QMediaPlayer(this);
+    playerSession->setSource(QUrl("rtsp://192.168.100.1:8554/myStream"));
 }
 
 ControlWindow::~ControlWindow()
@@ -148,11 +151,23 @@ void ControlWindow::on_start_client_button_clicked()
 {
     if (!serverOn)
         serverOn = client.startConnection("192.168.1.101", 8080);
+
 }
 
 void ControlWindow::on_close_client_button_clicked()
 {
     client.closeConnection();
     serverOn = false;
+}
+
+void ControlWindow::on_start_camera_button_clicked()
+{
+    playerSession->setVideoOutput(ui->robot_cam_widget);
+}
+
+
+void ControlWindow::on_stop_camera_button_clicked()
+{
+    playerSession->setVideoOutput(nullptr);
 }
 

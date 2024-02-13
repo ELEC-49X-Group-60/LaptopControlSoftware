@@ -32,10 +32,10 @@
    <widget class="QLabel" name="w_key">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>420</y>
-      <width>71</width>
-      <height>61</height>
+      <x>60</x>
+      <y>470</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -74,9 +74,9 @@ border-color: rgb(23, 201, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>490</y>
-      <width>71</width>
-      <height>61</height>
+      <y>510</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -114,10 +114,10 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="d_key">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>490</y>
-      <width>71</width>
-      <height>61</height>
+      <x>110</x>
+      <y>510</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -155,10 +155,10 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="s_key">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>490</y>
-      <width>71</width>
-      <height>61</height>
+      <x>60</x>
+      <y>510</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -228,8 +228,8 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="three_key">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>490</y>
+      <x>10</x>
+      <y>400</y>
       <width>71</width>
       <height>61</height>
      </rect>
@@ -269,8 +269,8 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="two_key">
     <property name="geometry">
      <rect>
-      <x>840</x>
-      <y>490</y>
+      <x>10</x>
+      <y>340</y>
       <width>71</width>
       <height>61</height>
      </rect>
@@ -310,8 +310,8 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="one_key">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>490</y>
+      <x>10</x>
+      <y>280</y>
       <width>71</width>
       <height>61</height>
      </rect>
@@ -351,10 +351,10 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="e_key">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>420</y>
-      <width>71</width>
-      <height>61</height>
+      <x>110</x>
+      <y>470</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -393,9 +393,9 @@ border-color: rgb(23, 201, 255);</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>420</y>
-      <width>71</width>
-      <height>61</height>
+      <y>470</y>
+      <width>51</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -433,10 +433,10 @@ border-color: rgb(23, 201, 255);</string>
    <widget class="QLabel" name="motor_label">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>420</y>
-      <width>171</width>
-      <height>131</height>
+      <x>30</x>
+      <y>200</y>
+      <width>41</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -453,6 +453,51 @@ RL: 128</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stop_camera_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:  rgb(255, 134, 29)</string>
+    </property>
+    <property name="text">
+     <string>Stop Camera</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="start_camera_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 247, 23)</string>
+    </property>
+    <property name="text">
+     <string>Start Camera</string>
+    </property>
+   </widget>
+   <widget class="QVideoWidget" name="robot_cam_widget" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>861</width>
+      <height>451</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -474,6 +519,14 @@ RL: 128</string>
    <addaction name="menuSecurity_Robot"/>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
