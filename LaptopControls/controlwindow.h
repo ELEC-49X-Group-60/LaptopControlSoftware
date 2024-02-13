@@ -2,6 +2,11 @@
 #define CONTROLWINDOW_H
 
 #include <QMainWindow>
+#include <QtCore>
+#include <QtGui>
+#include <QtWidgets>
+#include <QtMultimedia>
+#include <QtMultimediawidgets>
 #include "Client.h"
 
 QT_BEGIN_NAMESPACE
@@ -38,8 +43,11 @@ protected:
 private slots:
     void on_start_client_button_clicked();
     void on_close_client_button_clicked();
+    void on_start_camera_button_clicked();
+    void on_stop_camera_button_clicked();
 
 private:
     Ui::ControlWindow *ui;
+    QMediaPlayer *playerSession;
 };
 #endif // CONTROLWINDOW_H
