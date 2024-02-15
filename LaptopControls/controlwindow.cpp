@@ -13,7 +13,8 @@ ControlWindow::ControlWindow(QWidget *parent)
     serverOn = false;
 
     playerSession = new QMediaPlayer(this);
-    playerSession->setSource(QUrl("rtsp://192.168.100.1:8554/myStream"));
+    playerSession->setSource(QUrl("rtsp://192.168.1.101:8554/mystream"));
+    playerSession->play();
 }
 
 ControlWindow::~ControlWindow()
