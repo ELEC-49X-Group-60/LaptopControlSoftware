@@ -27,10 +27,10 @@ ControlWindow::sgn(int val){
 }
 
 void ControlWindow::adjustMotors(){
-    motorFR = 128 - (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER);
-    motorRR = 128 - (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER);
-    motorFL = 128 + (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER);
-    motorRL = 128 + (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * SPEED_MULTIPLIER);
+    motorRL = 128 - (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * speed * SPEED_MULTIPLIER);
+    motorFL = 128 - (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * speed * SPEED_MULTIPLIER);
+    motorRR = 128 + (sgn(x) * speed * SPEED_MULTIPLIER) + (spin * speed * SPEED_MULTIPLIER);
+    motorFR = 128 + (sgn(y) * speed * SPEED_MULTIPLIER) + (spin * speed * SPEED_MULTIPLIER);
 
     ui->motor_label->setText(QString("FR: %1\nRR: %2\nFL: %3\nRL: %4").arg(motorFR).arg(motorRR).arg(motorFL).arg(motorRL));
 }
