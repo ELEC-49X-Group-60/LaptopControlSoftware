@@ -69,21 +69,21 @@ void ControlWindow::keyPressEvent(QKeyEvent *ev)
             ui->two_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->three_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->one_key->setFrameShadow(QFrame::Raised);
-            speed = 1;
+            gear_speed = 1;
         }
         else if (ev->text() == "2"){
             ui->two_key->setStyleSheet("color:rgb(252 ,111, 3)");
             ui->one_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->three_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->two_key->setFrameShadow(QFrame::Raised);
-            speed = 2;
+            gear_speed = 2;
         }
         else if (ev->text() == "3"){
             ui->three_key->setStyleSheet("color:rgb(252 ,111, 3)");
             ui->one_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->two_key->setStyleSheet("color:rgb(23, 201, 255)");
             ui->three_key->setFrameShadow(QFrame::Raised);
-            speed = 3;
+            gear_speed = 3;
         }
         else{
             return;
